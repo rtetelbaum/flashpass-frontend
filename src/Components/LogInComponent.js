@@ -33,7 +33,7 @@ class LogInComponent extends React.Component {
 				'textAlign': 'center',
 				}}>
 				<h3 style={{'color': 'white'}}>Log In</h3>
-				<form onSubmit={this.submitHandler}>
+				<form onSubmit={() => this.submitHandler}>
 					<input className='inputOverride' style={{'marginBottom': '10px'}} type="email" name="email" placeholder="email" value={this.state.email} onChange={this.changeHandler} /><br />
 					<input className='inputOverride' style={{'marginBottom': '10px'}} type="password" name="password" placeholder="password" value={this.state.password} onChange={this.changeHandler} /><br />
 					<Button variant="contained" color="primary" type="submit">
