@@ -19,7 +19,6 @@ class DeckContainer extends React.Component {
 	}
 
 	render () {
-		console.log(localStorage.token)
 		return (
 			<div id="deckContainer">
 
