@@ -19,6 +19,7 @@ class DeckContainer extends React.Component {
 	}
 
 	render () {
+		console.log(localStorage.token)
 		return (
 			<div id="deckContainer">
 
@@ -42,7 +43,7 @@ class DeckContainer extends React.Component {
 							:
 							null
 					}} />
-					{this.props.user === null ? null :
+					{!localStorage.token ? null :
 						<Route path="/decks" render={() => 
 							this.props.decks.filter(deckEl => deckEl.user_id === this.props.user.id).length === 0 || this.props.user === null
 							?
