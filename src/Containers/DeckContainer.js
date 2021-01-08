@@ -13,11 +13,7 @@ class DeckContainer extends React.Component {
 	}
 
 	arrayOfDecks = () => {
-		if (this.props.decks.length > 0) {
-			userDecksArray = this.props.decks.filter(deckEl => deckEl.user_id === this.props.user.id)
-		} else {
-			null
-		}
+		const userDecksArray = this.props.decks.filter(deckEl => deckEl.user_id === this.props.user.id)
 		const sortedUserDecksArray = userDecksArray.sort((a, b) => parseFloat(a.id) - parseFloat(b.id))
 		return sortedUserDecksArray.map(deckEl => <DeckComponent key={deckEl.id} deckObj={deckEl} />)
 	}
@@ -48,8 +44,7 @@ class DeckContainer extends React.Component {
 					}} />
 					{this.props.user === null ? null :
 						<Route path="/decks" render={() => 
-							// this.props.decks.filter(deckEl => deckEl.user_id === this.props.user.id).length === 0 || this.props.user === null
-							this.props.user === null
+							this.props.decks.filter(deckEl => deckEl.user_id === this.props.user.id).length === 0 || this.props.user === null
 							?
 							<p style={{'color': '#FFF', 'fontFamily': 'Reenie Beanie', 'fontSize': '48px'}}>Please create a deck.</p>
 							:
