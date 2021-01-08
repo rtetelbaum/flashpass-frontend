@@ -43,9 +43,9 @@ class DeckContainer extends React.Component {
 							:
 							null
 					}} />
-					{!localStorage.token ? null :
+					{this.props.user === null ? null :
 						<Route path="/decks" render={() => 
-							this.props.decks.filter(deckEl => deckEl.user_id === this.props.user.id).length === 0 || this.props.user === null
+							(this.props.decks.filter(deckEl => deckEl.user_id === this.props.user.id).length === 0 || this.props.user === null)
 							?
 							<p style={{'color': '#FFF', 'fontFamily': 'Reenie Beanie', 'fontSize': '48px'}}>Please create a deck.</p>
 							:
