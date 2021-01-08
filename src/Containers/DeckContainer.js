@@ -9,7 +9,7 @@ import "@fontsource/reenie-beanie"
 class DeckContainer extends React.Component {
 
 	componentDidMount() {
-		this.props.getDecks()
+		this.props.decks.length > 1 ? this.props.getDecks() : null
 	}
 
 	arrayOfDecks = () => {
